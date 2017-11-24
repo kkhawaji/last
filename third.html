@@ -1,0 +1,195 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">	
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link rel="stylesheet" href="newjs/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="newjs/jqm-demos.css">
+	<script src="newjs/jquery-1.7.2.min.js"></script>
+ <link rel="stylesheet" href="newjs/jqm-docs.css">
+	 <link rel="stylesheet" href="newjs/jqm-docs.css">
+	   <script src "newjs/jquery.mobile-1.1.2.js"> </script>
+	    <link rel="stylesheet" href="newjs/css.css">
+		<link rel="stylesheet" href="newjs/jquery.mobile-1.4.0.min.css">
+		<link rel="stylesheet" href="newjs/theme-classic.css"/>
+		    <link rel="stylesheet"  href="newjs/jquery.mobile-1.3.1.min.css />
+	
+    
+    <link rel="stylesheet" href="newjs/css.css">
+    <script type="text/javascript" src="newjs/main.js" charset="UTF-8">
+	</script><script src="newjs/jquery.js"></script>
+    <script src="newjs/index.js"></script>
+    <script src="newjs/jquery.mobile-1.4.5.min.js"></script>
+	
+	<style>
+	#submitButton {
+	 background:red;}
+	 
+	 
+	 
+	</style>
+	
+
+
+
+</head>
+<body>	
+ 
+
+
+	<div data-role="header" data-theme="b" data-position="fixed">		
+	<div data-role="navbar"  >
+		<ul data-inset="true" >
+					
+					<li><a href="second.html" data-icon="shop">Pizza Gallery</a></li>
+					<li><a href="third.html" data-icon="action">Build Your Own</a></li>					
+				    <li><a href="order.html" data-icon="forward" >Order</a></li>
+		</ul>
+	</div><!-- /navbar -->
+	</div><!-- /footer -->
+	
+        <header>
+            <h2> Build Your Own Pizza</h2>
+        </header>
+        <section>
+            <form id="orderPizzaForm">
+			<fieldset>
+                <div data-mini="true" style="width:300px;height:150px;" >				     
+			<label for="select-native-17">Pizza Size</label>
+
+				    <select name="select-native-17" id="select-native-17">
+				 	
+				        <option value="1">Small</option>
+				        <option value="2">Medium</option>
+				        <option value="3">Large</option>
+				        
+				    </select>
+				</div>
+				</fieldset>
+				
+				
+					<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>Crust Size:</legend>
+						<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="thin crust" checked="checked">
+						<label for="radio-choice-h-2a">Thin Crust</label>
+						<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="regular crust">
+						<label for="radio-choice-h-2b">Regular Crust</label>
+						
+					</fieldset>
+               
+				
+				
+				
+				<fieldset data-role="controlgroup" data-mini="true">
+					<legend>cheese :</legend>
+					<input type="radio" name="radio-choice-v-6" id="radio-choice-v-6a" value="Mozarella" checked="checked">
+					<label for="radio-choice-v-6a">Mozarella</label>
+					<input type="radio" name="radio-choice-v-6" id="radio-choice-v-6b" value="Feta">
+					<label for="radio-choice-v-6b">Feta</label>
+					<input type="radio" name="radio-choice-v-6" id="radio-choice-v-6c" value="Reduced Fat">
+					<label for="radio-choice-v-6c">Reduced Fat</label>
+				</fieldset>
+						
+				
+                <fieldset data-role="controlgroup">
+                    <legend>Choose your toppings</legend>
+
+                    <div>
+                        <input class="messageCheckbox" type="checkbox" id="anchovies" name="toppings" value="anchovies">
+                        <label for="anchovies">Anchovies</label>
+                    </div>
+                    <div>
+                        <input class="messageCheckbox" type="checkbox" id="bacon" name="toppings" value="bacon">
+                        <label for="bacon">Bacon</label>
+                    </div>
+                    <div>
+                        <input class="messageCheckbox" type="checkbox" id="onions" name="toppings" value="onions">
+                        <label for="onions">Onions</label>
+                    </div>
+                    <div>
+                        <input class="messageCheckbox"  type="checkbox" id="garlic" name="toppings" value="garlic">
+                        <label for="garlic">Garlic</label>
+                    </div>
+                    <div>
+                        <input class="messageCheckbox"  type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+                        <label for="mushrooms">Mushrooms</label>
+                    </div>
+                    <div>
+                        <input class="messageCheckbox"  type="checkbox" id="peppers" name="toppings" value="peppers">
+                        <label for="peppers">Peppers</label>
+                    </div>
+                </fieldset>
+                <div style="margin-top:40px">
+             
+
+				
+                </div>
+            </form>
+			 <div  class="ui-body ui-body-a"class="ui-block-b"><button  onclick="function()"   id= "submitButton"  data-theme="c"   >submit</button></div>
+        </section> 
+       <script>
+
+            window.onload=function(){
+                document.getElementById("submitButton").addEventListener('click', function () {
+
+                 sessionStorage.clear();   
+                //getting pizza size
+                var pizzaSize = document.getElementById('select-native-17').value;
+                 sessionStorage.setItem('pizzasize',pizzaSize);
+
+                //getting crust size
+                if (document.getElementById('radio-choice-h-2a').checked) {
+                    var crust = document.getElementById('radio-choice-h-2a').value;
+                     sessionStorage.setItem('crustsize',crust);
+                }
+                else {
+                    crust = document.getElementById('radio-choice-h-2b').value;
+                    sessionStorage.setItem('crustsize',crust);
+                    }
+
+                //getting cheese    
+                    if (document.getElementById('radio-choice-v-6a').checked) {
+                    var cheese = document.getElementById('radio-choice-v-6a').value;
+                    sessionStorage.setItem('cheese',cheese);
+                }
+                else if(document.getElementById('radio-choice-v-6b').checked) {
+                    cheese = document.getElementById('radio-choice-v-6b').value;
+                    sessionStorage.setItem('cheese',cheese);
+                }
+                else{
+                    cheese = document.getElementById('radio-choice-v-6c').value;
+                    sessionStorage.setItem('cheese',cheese);
+                }
+
+                //getting toppings
+                var checkedValue = [];
+                    var inputElements = document.getElementsByClassName('messageCheckbox');
+                    for (var i = 0; inputElements[i]; i++) {
+                        if (inputElements[i].checked) {
+                            checkedValue.push (inputElements[i].value);
+                        }
+                }
+                sessionStorage.setItem('toppings',checkedValue);
+
+                if(sessionStorage){
+                    window.location='./order.html';
+                }
+
+             });
+            }
+        </script>
+
+<div data-role="footer" data-theme="b" data-position="fixed">		
+	<div data-role="navbar"  data-iconpos="top">
+		<ul data-inset="true" >
+					<li ><a href="index.html" data-icon="info">Donny's Pizza</a></li>
+					<li><a class="current" href="index.html" data-icon="home">Home</a></li>
+					
+		</ul>
+	</div><!-- /navbar -->
+	</div><!-- /footer -->
+</body>
+</html>
